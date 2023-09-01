@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<form th:action="@{/productos/actualizar/{id}(id=${producto.id})}" th:object="${producto}" th:method="PUT">
+		<table>
+			<tr>
+				<td><label>ID:</label></td>
+				<td><input type="text" th:field="${producto.id}"></td>
+			</tr>
+			<tr>
+				<td><label>Nombre:</label></td>
+				<td><input type="text" th:field="${producto.nombre}"></td>
+			</tr>
+			<tr>
+				<td><label>Codigo de Barras Maestro:</label></td>
+				<td><input type="text" th:field="${producto.codigoDeBarrasMaestro}"></td>
+			</tr>
+			<tr>
+				<td><label>Categoria:</label></td>
+				<td><input type="text" th:field="${producto.categoria}"></td>
+			</tr>
+		</table>
+
+		<input type="submit" value="Editar">
+
+
+	</form>
+</body>
+
+</html>
